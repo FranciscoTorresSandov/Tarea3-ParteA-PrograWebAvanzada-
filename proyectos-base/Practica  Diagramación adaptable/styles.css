@@ -1,0 +1,154 @@
+/* Semana 1 - Actividad 2. Hoja completa, mobile-first.
+   Incluye la ampliacion opcional: progreso estatico e insignias variantes. */
+:root {
+  --color-primary: #0056b3;
+  --color-secondary: #17a2b8;
+  --color-dark: #212529;
+  --color-light: #f8f9fa;
+  --color-white: #ffffff;
+  --color-border: #dee2e6;
+  --color-soft: #475569;
+  --color-hover: #02418a;
+  --color-focus: #ffcb45;
+  --color-badge-new: #124a92;
+  --color-badge-updated: #285e36;
+  --color-badge-soon: #673a91;
+  --color-progress-track: #dce6ee;
+  --color-progress-fill: #e0e74c;
+  --font-main: system-ui, -apple-system, sans-serif;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --radius: 0.5rem;
+  --max-layout: 75rem;
+  --header-height: 4.5rem;
+  --progress-height: 0.1875rem;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 100%; scroll-padding-top: var(--header-height); }
+body {
+  font-family: var(--font-main);
+  background: var(--color-light);
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+img { display: block; max-width: 100%; height: auto; }
+a:focus-visible { outline: 0.1875rem solid var(--color-focus); outline-offset: var(--spacing-xs); }
+/* F2-1 y F4-1: encabezado Flexbox de columna y sticky. */
+.main-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: var(--spacing-md);
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.logo h1 { font-size: 1.25rem; line-height: 1.2; }
+/* F2-2: lista flexible y adaptable. */
+.main-nav ul { display: flex; flex-wrap: wrap; gap: var(--spacing-sm); list-style: none; }
+.main-nav a {
+  display: block;
+  color: var(--color-white);
+  text-decoration: none;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius);
+}
+.main-nav a:hover, .main-nav a:focus-visible { background: var(--color-hover); }
+/* Extensión: una barra de progreso estática, no requiere JavaScript. */
+.reading-progress {
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  height: var(--progress-height);
+  background: var(--color-progress-track);
+}
+.reading-progress__fill { display: block; width: 40%; height: 100%; background: var(--color-progress-fill); }
+.layout-container { display: flex; flex-direction: column; gap: var(--spacing-lg); padding: var(--spacing-md); }
+.content-area { min-width: 0; }
+.hero h2 { color: var(--color-primary); margin-bottom: var(--spacing-sm); }
+.cards-grid { display: flex; flex-direction: column; gap: var(--spacing-md); margin-top: var(--spacing-md); }
+/* F4-2: la tarjeta es el contexto de posicionamiento de la insignia. */
+.card {
+  position: relative;
+  min-width: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  overflow-wrap: anywhere;
+}
+/* Únicamente las tarjetas con insignia reservan espacio. */
+.card--con-insignia { padding-top: calc(var(--spacing-lg) + var(--spacing-sm)); }
+.card h3 { color: var(--color-primary); font-size: 1.1rem; }
+/* F4-3: insignia superpuesta, con variantes de alto contraste. */
+.card__badge {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  z-index: 1;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.card__badge--nuevo { background: var(--color-badge-new); }
+.card__badge--actualizado { background: var(--color-badge-updated); }
+.card__badge--proximamente { background: var(--color-badge-soon); }
+.sidebar {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+}
+.sidebar h3 { margin-bottom: var(--spacing-sm); color: var(--color-primary); }
+.sidebar ul { list-style: none; display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.sidebar a { color: var(--color-primary); }
+.main-footer {
+  text-align: center;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+/* F3-1 a F3-3 y F4-4: transición a escritorio/tableta desde 48rem. */
+@media (min-width: 48rem) {
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: var(--header-height);
+    padding-inline: var(--spacing-lg);
+  }
+  .layout-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 16rem;
+    grid-template-areas: "contenido barra";
+    gap: var(--spacing-lg);
+    max-width: var(--max-layout);
+    margin-inline: auto;
+    padding: var(--spacing-lg);
+  }
+  .content-area { grid-area: contenido; }
+  .cards-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sidebar {
+    grid-area: barra;
+    position: sticky;
+    top: calc(var(--header-height) + var(--progress-height) + var(--spacing-md));
+    align-self: start;
+  }
+}
+/* F3-4: ampliación de barra lateral y tres tarjetas por fila. */
+@media (min-width: 64rem) {
+  .layout-container { grid-template-columns: minmax(0, 1fr) 20rem; }
+  .cards-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .logo h1 { font-size: 1.5rem; }
+}

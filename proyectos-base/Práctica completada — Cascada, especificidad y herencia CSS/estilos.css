@@ -1,0 +1,26 @@
+/* Parte 1: codigo inicial, conservado para reproducir los conflictos. */
+:root {
+  --color-principal: #00479b;
+  --color-alerta: #b03a2b;
+  --espacio: 1rem;
+}
+
+body {
+  color: #333333;
+  font-family: Arial, sans-serif;
+}
+
+.tarjeta {
+  color: var(--color-principal);
+  padding: var(--espacio);
+  border: 2px solid #cccccc;
+}
+
+h3 { color: green; }
+.titulo { color: blue; }
+.tarjeta h3 { color: orange; }
+#destacada h3 { color: red; }
+.resumen { color: purple; }
+.tarjeta p { color: gray; }
+.estado { color: var(--color-alerta); }
+.autor:hover { text-decoration: none; }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Innovation Hub | Catálogo de iniciativas</title>
+</head>
+<body>
+  <header id="inicio">
+    <p><strong>Innovation Hub</strong> | Universidad CENFOTEC</p>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio" aria-current="page">Inicio</a></li>
+        <li><a href="#resultados">Catálogo</a></li>
+        <li><a href="#filtros">Filtros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Catálogo de iniciativas</h1>
+    <p>Encuentra ideas, necesidades y retos de la comunidad universitaria.</p>
+
+    <aside id="filtros" aria-labelledby="filtros-titulo">
+      <h2 id="filtros-titulo">Filtrar iniciativas</h2>
+      <form action="#resultados" method="get">
+        <p>
+          <label for="tipo">Tipo de iniciativa</label>
+          <select id="tipo" name="tipo">
+            <option value="">Todos los tipos</option>
+            <option value="idea">Idea</option>
+            <option value="necesidad">Necesidad</option>
+            <option value="reto">Reto</option>
+          </select>
+        </p>
+        <p>
+          <label for="competencia">Competencia requerida</label>
+          <input id="competencia" name="competencia" type="search" placeholder="Ej.: React">
+        </p>
+        <p><button type="submit">Aplicar filtros</button></p>
+      </form>
+      <p><small>Demostración semántica: los filtros todavía no ejecutan búsquedas.</small></p>
+    </aside>
+
+    <section id="resultados" aria-labelledby="resultados-titulo">
+      <h2 id="resultados-titulo">Iniciativas disponibles</h2>
+      <article id="voluntariado" aria-labelledby="voluntariado-titulo">
+        <h3 id="voluntariado-titulo">Coordinar voluntariado universitario</h3>
+        <p>Idea · Gestión comunitaria</p>
+        <p>Organizar oportunidades de colaboración y registrar participaciones.</p>
+        <h4>Competencias requeridas</h4>
+        <ul><li>React</li><li>Diseño de interfaces</li></ul>
+        <p>Estado: <strong>En progreso</strong> · Visibilidad: pública</p>
+        <p><a href="#voluntariado">Ver iniciativa Coordinar voluntariado universitario</a></p>
+      </article>
+      <article id="accesibilidad" aria-labelledby="accesibilidad-titulo">
+        <h3 id="accesibilidad-titulo">Mejorar accesibilidad del campus</h3>
+        <p>Necesidad · Educación</p>
+        <p>Recopilar barreras de acceso y proponer mejoras concretas.</p>
+        <h4>Competencias requeridas</h4>
+        <ul><li>Investigación UX</li><li>Análisis de datos</li></ul>
+        <p>Estado: <strong>Abierta</strong> · Visibilidad: pública</p>
+        <p><a href="#accesibilidad">Ver iniciativa Mejorar accesibilidad del campus</a></p>
+      </article>
+      <article id="reto-ambiental" aria-labelledby="ambiental-titulo">
+        <h3 id="ambiental-titulo">Reducir residuos universitarios</h3>
+        <p>Reto · Ambiente</p>
+        <p>Diseñar propuestas para reducir residuos durante eventos académicos.</p>
+        <h4>Competencias requeridas</h4>
+        <ul><li>Gestión de proyectos</li><li>Comunicación</li></ul>
+        <p>Estado: <strong>En evaluación</strong> · Visibilidad: restringida</p>
+        <p><a href="#reto-ambiental">Ver iniciativa Reducir residuos universitarios</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <p>Innovation Hub · Universidad CENFOTEC · Ejercicio de estructura semántica</p>
+    <p>Contacto: <a href="mailto:hub@ejemplo.ac.cr">hub@ejemplo.ac.cr</a> (correo ilustrativo)</p>
+  </footer>
+</body>
+</html>

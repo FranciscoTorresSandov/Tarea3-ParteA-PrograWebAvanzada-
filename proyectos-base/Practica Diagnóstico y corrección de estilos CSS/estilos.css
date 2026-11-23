@@ -1,0 +1,47 @@
+/* Semana 2 - Diagnóstico y corrección de estilos CSS.
+   Se eliminan colisiones de especificidad, cascada y !important. */
+:root {
+  --azul: #00479b;
+  --azul-hover: #00336f;
+  --azul-borde: #0056b3;
+  --fondo: #f4f6f9;
+  --blanco: #ffffff;
+  --borde: #cccccc;
+  --texto: #252525;
+  --descripcion: #555555;
+  --rojo: #b03a2b;
+  --verde: #1e7a4b;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background-color: var(--fondo); color: var(--texto); line-height: 1.55; }
+.encabezado { background-color: var(--azul); color: var(--blanco); padding: 2rem; }
+.encabezado__titulo, .encabezado__descripcion { color: var(--blanco); }
+.navegacion { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.navegacion a { color: var(--blanco); text-decoration: none; }
+.navegacion a:hover { text-decoration: underline; }
+.contenido { max-width: 900px; margin: 2rem auto; padding: 1rem; }
+.tarjeta {
+  background-color: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#actividad-destacada { border: 4px solid var(--azul-borde); }
+.tarjeta__titulo { color: var(--azul); }
+.tarjeta__titulo--alerta { color: var(--rojo); }
+.tarjeta__descripcion { color: var(--descripcion); }
+.tarjeta__estado { font-weight: 700; }
+.tarjeta__estado.estado-disponible { color: var(--verde); }
+.tarjeta__estado.estado-alerta { color: var(--rojo); }
+.boton.boton--primario {
+  display: inline-block;
+  background-color: var(--azul);
+  color: var(--blanco);
+  border-radius: 5px;
+  padding: 0.7rem 1.2rem;
+  text-decoration: none;
+}
+.boton.boton--primario:hover { background-color: var(--azul-hover); }
+.boton.boton--primario:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }
+.pie-pagina { text-align: center; color: var(--descripcion); padding: 1rem; }

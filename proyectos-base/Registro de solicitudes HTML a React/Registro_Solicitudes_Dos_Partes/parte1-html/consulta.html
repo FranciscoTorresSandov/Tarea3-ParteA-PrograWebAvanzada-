@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de solicitudes - Mesa de ayuda</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <main class="contenedor">
+    <nav class="menu" aria-label="Navegación de solicitudes">
+      <a href="index.html">Registrar solicitud</a>
+      <a href="consulta.html" aria-current="page">Consultar solicitudes</a>
+    </nav>
+
+    <section class="tarjeta">
+      <header class="encabezado">
+        <span class="etiqueta">Mesa de ayuda</span>
+        <h1>Consulta de solicitudes</h1>
+        <p>Seleccione una prioridad para consultar las solicitudes de soporte registradas.</p>
+      </header>
+      <div class="campo">
+        <label for="filtroPrioridad">Filtrar por prioridad</label>
+        <select id="filtroPrioridad">
+          <option value="">Todas</option>
+          <option value="Baja">Baja</option>
+          <option value="Media">Media</option>
+          <option value="Alta">Alta</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="tarjeta resultados">
+      <div class="titulo-lista">
+        <div>
+          <span class="etiqueta">Registros</span>
+          <h2>Solicitudes registradas</h2>
+        </div>
+        <span id="contador">0 solicitudes</span>
+      </div>
+      <div id="listaSolicitudes">
+        <p class="sin-datos">No existen solicitudes registradas.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/consulta.js"></script>
+</body>
+</html>

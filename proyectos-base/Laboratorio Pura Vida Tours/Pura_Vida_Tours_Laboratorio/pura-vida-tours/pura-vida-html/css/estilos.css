@@ -1,0 +1,15 @@
+/* Variables compartidas: cambia solo --verde-principal para cambiar la marca. */
+:root { --verde-principal: #156c56; --verde-claro: #43a047; }
+.bg-verde { background-color: var(--verde-principal); }
+.hero {
+  min-height: 70vh;
+  background-image: linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.50)),
+    url("https://picsum.photos/seed/costarica/1600/900");
+  background-size: cover;
+  background-position: center;
+  background-color: var(--verde-principal);
+}
+.card-tour { border: none; transition: transform .2s ease, box-shadow .2s ease; }
+.card-tour:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(0,0,0,.15); }
+.card-tour img { height: 200px; object-fit: cover; }
+.precio { color: var(--verde-claro); font-weight: 700; font-size: 1.25rem; }

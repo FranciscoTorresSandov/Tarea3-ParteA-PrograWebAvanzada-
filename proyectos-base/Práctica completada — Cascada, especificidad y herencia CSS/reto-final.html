@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reto final - Cascada, especificidad y herencia</title>
+  <link rel="stylesheet" href="reto-final.css">
+</head>
+<body>
+  <main>
+    <h1>Catálogo de cursos</h1>
+    <p>El mismo componente con tres variantes de estado, sin ID en los estilos ni !important.</p>
+    <section class="producto" id="producto-importante" aria-label="Curso con estado normal">
+      <h2 class="producto__titulo">Curso de Desarrollo Web</h2>
+      <p class="producto__descripcion">Curso introductorio para desarrollar interfaces web.</p>
+      <span class="producto__estado">Inscripciones abiertas</span>
+      <a class="producto__accion" href="#informacion">Ver información</a>
+    </section>
+    <section class="producto producto--alerta" aria-label="Curso en alerta">
+      <h2 class="producto__titulo">Taller de Ciberseguridad</h2>
+      <p class="producto__descripcion">Actividad con pocas plazas disponibles.</p>
+      <span class="producto__estado">Casi lleno</span>
+      <a class="producto__accion" href="#informacion">Ver información</a>
+    </section>
+    <section class="producto producto--exito" aria-label="Curso con cupos disponibles">
+      <h2 class="producto__titulo">Introducción a React</h2>
+      <p class="producto__descripcion">Aprende a crear componentes y manejar estados.</p>
+      <span class="producto__estado">Cupos disponibles</span>
+      <a class="producto__accion" href="#informacion">Ver información</a>
+    </section>
+    <p id="informacion">Información de demostración de los cursos.</p>
+  </main>
+</body>
+</html>
